@@ -32,7 +32,7 @@ const DataTable: React.FunctionComponent<IDataTableProps> = (props) => {
           <td className="px-6 py-3">
             <Link
               className="text-lg"
-              to={`${serverUrl}/shortURL/${item.shortUrl}`}
+              to={`${serverUrl}/api/shortURL/${item.shortUrl}`}
               target="_blank"
               rel="noreferrer noopener"
             >
