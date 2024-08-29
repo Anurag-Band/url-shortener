@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import connectDb from "./config/dbConfig";
 import urlRoutes from "./routes/shortUrl.route";
+import { getUrl } from "./controller/shortUrl.controller";
 dotenv.config();
 connectDb();
 
@@ -14,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: "*",
+    origin: FRONTEND_URL,
   })
 );
 
@@ -24,7 +25,7 @@ app.get("/", (req, res) => {
 });
 
 // custom route for redircting user
-// app.get("/:id", getUrl);
+app.get("/:id", getUrl);
 
 // others routes
 app.use("/api", urlRoutes);
