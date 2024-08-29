@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { serverUrl, shortRedirectURL } from "../../helpers/Constants";
+import { serverUrl } from "../../helpers/Constants";
 import { UrlData } from "../../interface/UrlData";
 import axios from "axios";
 
@@ -32,7 +32,7 @@ const DataTable: React.FunctionComponent<IDataTableProps> = (props) => {
           <td className="px-6 py-3">
             <Link
               className="text-lg"
-              to={`${shortRedirectURL}/${item.shortUrl}`}
+              to={`${serverUrl}/shortURL/${item.shortUrl}`}
               target="_blank"
               rel="noreferrer noopener"
             >
