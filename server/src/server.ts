@@ -18,6 +18,10 @@ app.use(
   })
 );
 
+app.get("/", (req, res) => {
+  res.send("server is running");
+});
+
 // custom route for redircting user
 // app.get("/:id", getUrl);
 
