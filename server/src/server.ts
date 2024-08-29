@@ -24,7 +24,7 @@ app.use(
 app.get("/:id", getUrl);
 
 // others routes
-app.use("/api/", shortUrl);
+app.use("/api", shortUrl);
 
 app.listen(PORT, () => {
   console.log(`server running on port: ${PORT}`);
