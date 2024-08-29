@@ -14,7 +14,7 @@ const FormContainer: React.FunctionComponent<IFormContainerProps> = (props) => {
   const handleSubmit = async (e: React.FocusEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      await axios.post(`${serverUrl}/shorturl`, {
+      await axios.post(`${serverUrl}/api/shorturl`, {
         fullUrl: fullUrl,
         shortUrl: shortUrl,
       });

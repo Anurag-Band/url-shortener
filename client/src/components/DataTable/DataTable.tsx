@@ -90,15 +90,15 @@ const DataTable: React.FunctionComponent<IDataTableProps> = (props) => {
 
   const copyToClipboard = async (url: string) => {
     try {
-      await navigator.clipboard.writeText(`${serverUrl}/shortUrl/${url}`);
-      alert(`URL copied: ${serverUrl}/shortUrl/${url}`);
+      await navigator.clipboard.writeText(`${serverUrl}/api/shortUrl/${url}`);
+      alert(`URL copied: ${serverUrl}/api/shortUrl/${url}`);
     } catch (error) {
       console.log(error);
     }
   };
 
   const deleteUrl = async (id: string) => {
-    const response = await axios.delete(`${serverUrl}/shortUrl/${id}`);
+    const response = await axios.delete(`${serverUrl}/api/shortUrl/${id}`);
     console.log(response);
     updateReloadState();
   };
