@@ -2,8 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import connectDb from "./config/dbConfig";
-import shortUrl from "./routes/shortUrl.route";
-import { getUrl } from "./controller/shortUrl.controller";
+import urlRoutes from "./routes/shortUrl.route";
 dotenv.config();
 connectDb();
 
@@ -21,10 +20,10 @@ app.use(
 );
 
 // custom route for redircting user
-app.get("/:id", getUrl);
+// app.get("/:id", getUrl);
 
 // others routes
-app.use("/api", shortUrl);
+app.use("/api", urlRoutes);
 
 app.listen(PORT, () => {
   console.log(`server running on port: ${PORT}`);
